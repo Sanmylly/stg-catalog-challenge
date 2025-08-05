@@ -16,12 +16,11 @@ export default function ProductList() {
       const supabase = createClient();
       const { data, error } = await supabase
         .from('products')
-        .select('*');
-        console.log(data, error);
+        .select('*')
       if (error) {
         setError(error.message);
       } else {
-        setProducts(data || []);
+        setProducts(data);
       }
     };
     fetchProducts();

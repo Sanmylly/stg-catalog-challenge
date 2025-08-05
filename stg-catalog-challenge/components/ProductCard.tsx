@@ -11,7 +11,7 @@ export interface ProductCardProps {
 
 export default function ProductCard({ id, name, price, image_url, description }: ProductCardProps) {
   return (
-    <Link href={`/produto/${id}`}>
+    <Link href={`/product/${id}`}>
         <Image
           src={image_url}
           alt={name}
