@@ -5,7 +5,7 @@ import supabase from '@/lib/supabase/client'
 import { useSession } from '@supabase/auth-helpers-react'
 import { Button } from '@/components/ui/button'
 
-export default function CarrinhoPage() {
+export default function CartPage() {
   type Product = {
     id: number
     name: string
@@ -26,7 +26,7 @@ export default function CarrinhoPage() {
   useEffect(() => {
     if (!session) return
 
-    async function fetchCarrinho() {
+    async function fetchCart() {
       if (!session?.user?.id) return
 
       const { data, error } = await supabase
@@ -46,7 +46,7 @@ export default function CarrinhoPage() {
       )
     }
 
-    fetchCarrinho()
+    fetchCart()
   }, [session])
 
   const total = items.reduce(
@@ -54,8 +54,8 @@ export default function CarrinhoPage() {
     0
   )
 
-  async function atualizarQuantidade(id: number, novaQtd: number) {
-    if (novaQtd <= 0) return removerItem(id)
+  async function attQuantity(id: number, novaQtd: number) {
+    if (novaQtd <= 0) return removeItem(id)
 
     const { error } = await supabase
       .from('cart_items')
@@ -65,7 +65,7 @@ export default function CarrinhoPage() {
     if (!error) setItems(items.map(i => i.id === id ? { ...i, quantity: novaQtd } : i))
   }
 
-  async function removerItem(id: number) {
+  async function removeItem(id: number) {
     const { error } = await supabase.from('cart_items').delete().eq('id', id)
     if (!error) setItems(items.filter(i => i.id !== id))
   }
@@ -84,10 +84,10 @@ export default function CarrinhoPage() {
             <p className="text-gray-500">R$ {item.products.price.toFixed(2)}</p>
           </div>
           <div className="flex items-center gap-2">
-            <Button onClick={() => atualizarQuantidade(item.id, item.quantity - 1)} size="sm">-</Button>
+            <Button onClick={() => attQuantity(item.id, item.quantity - 1)} size="sm">-</Button>
             <span>{item.quantity}</span>
-            <Button onClick={() => atualizarQuantidade(item.id, item.quantity + 1)} size="sm">+</Button>
-            <Button onClick={() => removerItem(item.id)} variant="destructive" size="sm">Remover</Button>
+            <Button onClick={() => attQuantity(item.id, item.quantity + 1)} size="sm">+</Button>
+            <Button onClick={() => removeItem(item.id)} variant="destructive" size="sm">Remover</Button>
           </div>
         </div>
       ))}
