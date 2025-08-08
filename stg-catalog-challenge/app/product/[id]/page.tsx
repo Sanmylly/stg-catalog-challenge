@@ -6,12 +6,45 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import Header from '@/components/header';
+import { Metadata } from 'next';
 
 interface Params {
   params: Promise<{
     id: string;
   }>;
 }
+
+// Função para gerar metadata dinâmica
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+  const { id } = await params;
+
+  const { data: product, error } = await supabase
+    .from('products')
+    .select('name, description')
+    .eq('id', id)
+    .single();
+
+  if (error || !product) {
+    return {
+      title: 'Produto não encontrado | STG Catalog',
+      description: 'O produto que você está procurando não foi encontrado.'
+    };
+  }
+
+  return {
+    title: `${product.name} | STG Catalog`,
+    description: product.description || `Confira os detalhes de ${product.name} no STG Catalog.`,
+    openGraph: {
+      title: `${product.name} | STG Catalog`,
+      description: product.description || `Confira os detalhes de ${product.name} no STG Catalog.`,
+      type: 'website',
+    },
+  };
+}
+
+
+   
+
 
 export default async function ProductPage({ params }: Params) {
   const { id } = await params;

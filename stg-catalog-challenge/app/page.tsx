@@ -3,7 +3,7 @@ import Header from "@/components/header";
 import { Metadata } from 'next';
 
    export const metadata: Metadata = {
-     title: 'Product Catalog',
+     title: 'STG Catálogo',
    };
 
 
@@ -16,9 +16,9 @@ export default async function Home() {
         
         <div className="flex-1 flex flex-col gap-20 max-w-7xl p-5">
           <div className="flex flex-col items-center gap-4">
-            <h1 className="text-3xl font-bold">Welcome to the Product Catalog</h1>
+            <h1 className="text-3xl font-bold">STG - Catálogo</h1>
             <p className="text-lg text-muted-foreground">
-              Explore our collection of products and find what you need.
+              Explore nossa coleção de produtos e encontre o que você precisa.
             </p>
           </div>
 
@@ -28,7 +28,7 @@ export default async function Home() {
 
         <footer className="w-full flex items-center justify-center border-t mx-auto text-center text-xs gap-8 py-16">
           <p>
-            Powered by Évora
+            Powered by Évora - Sanmylly Melo
           </p>
         </footer>
       </div>
