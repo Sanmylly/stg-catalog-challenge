@@ -1,8 +1,8 @@
 'use client';
 import { useEffect, useState } from 'react';
-import ProductCard from './ProductCard';
+import ProductCard from './product-card';
 import { createClient } from '@/lib/supabase/client';
-import { ProductCardProps } from './ProductCard';
+import { ProductCardProps } from './product-card';
 
 
 
@@ -31,7 +31,7 @@ export default function ProductList() {
   );
 
   return (
-    <div className="p-4">
+    <div className="p-6">
       <input
         type="text"
         placeholder="Buscar produto..."
@@ -42,7 +42,7 @@ export default function ProductList() {
 
       {error && <div className="text-red-500 mb-4">{error}</div>}
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 items-stretch">
         {filteredProducts.map(product => (
           <ProductCard key={product.id} {...product} />
         ))}

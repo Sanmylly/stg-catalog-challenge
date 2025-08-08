@@ -8,6 +8,7 @@ import AuthGuard from '@/components/auth-guard'
 import Link from 'next/link'
 import { ShoppingBag, ArrowLeft } from 'lucide-react'
 import Header from '@/components/header'
+import Image from 'next/image'
 
 export default function CartPage() {
   type Product = {
@@ -134,10 +135,13 @@ export default function CartPage() {
                   >
                     <div className="flex items-center gap-4">
                       {item.products.image_url && (
-                        <img
+                        <Image
                           src={item.products.image_url}
                           alt={item.products.name}
                           className="w-16 h-16 object-cover rounded"
+                          width={64}
+                          height={64}
+
                         />
                       )}
                       <div>
