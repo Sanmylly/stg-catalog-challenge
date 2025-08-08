@@ -1,5 +1,11 @@
 import ProductList from "@/components/ProductList";
 import Header from "@/components/header";
+import { Metadata } from 'next';
+
+   export const metadata: Metadata = {
+     title: 'Product Catalog',
+   };
+
 
 export default async function Home() {
 

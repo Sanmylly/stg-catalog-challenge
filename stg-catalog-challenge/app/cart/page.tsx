@@ -161,9 +161,11 @@ export default function CartPage() {
                       R$ {total.toFixed(2)}
                     </span>
                   </div>
-                  <Button className="w-full py-3 text-lg" variant="default">
-                    Finalizar Pedido
-                  </Button>
+                  <Link href="/checkout">
+                    <Button className="w-full py-3 text-lg" variant="default">
+                      Finalizar Pedido
+                    </Button>
+                  </Link>
                 </div>
               </>
             )}
