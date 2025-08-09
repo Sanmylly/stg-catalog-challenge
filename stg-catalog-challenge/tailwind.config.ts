@@ -14,9 +14,10 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         lightBlue: "rgb(88, 131, 200)",
-        darkBlue: "rgb(29, 39, 62)",
-        lightText: "rgb(242, 248, 252)",
-        darkText: "rgb(0, 0, 0)",
+        darkBlue: "rgb(12, 17, 26)",
+        lightText: "rgba(248, 250, 250, 0.84)",
+        darkCard: "rgb(4, 4, 5)",
+        offWhite:"rgba(239, 241, 242, 0.63)",
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",

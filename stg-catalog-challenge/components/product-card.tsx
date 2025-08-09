@@ -72,7 +72,7 @@ export default function ProductCard({ id, name, price, image_url, description }:
   };
 
   return (
-    <div className="border rounded-lg overflow-hidden hover:shadow-lg transition-shadow m-3 h-full flex flex-col">
+    <div className="border rounded-lg overflow-hidden hover:shadow-lg transition-shadow m-3 h-full flex flex-col bg-lightText dark:bg-darkCard">
       <Link href={`/product/${id}`}>
         <Image
           src={image_url}
@@ -92,7 +92,7 @@ export default function ProductCard({ id, name, price, image_url, description }:
               </h3>
             </Link>
             
-            <p className="text-gray-600 text-sm mb-2 line-clamp-3 min-h-[4.5rem]">
+            <p className="text-gray-600 text-sm mb-2 line-clamp-3 min-h-[4.5rem] dark:text-lightText">
               {description}
             </p>
             <p className="text-xl font-bold text-green-600">

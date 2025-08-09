@@ -12,7 +12,7 @@ export default function Header() {
       <div className="flex items-center gap-2">
         
         <Link href="/" className="flex items-center gap-2">
-          <span className="text-lg font-normal ml-5 text-darkText dark:text-lightText">Catalog Challenge</span>
+          <span className="text-lg font-normal ml-5 text-white">Catálogo STG</span>
         </Link>
       </div>
       <div className="ml-auto flex items-center gap-4">
