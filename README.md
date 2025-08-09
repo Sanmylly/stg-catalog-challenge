@@ -201,8 +201,6 @@ A mensagem gerada segue exatamente o formato especificado:
 🛍️ NOVO PEDIDO - STG CATALOG
 👤 Cliente: [Nome]
 📧 Email: [Email]
-📱 Telefone: [Telefone]
-📍 Endereço: [Endereço completo]
 
 🛒 PRODUTOS:
 •⁠  ⁠[Produto] - Qtd: [X] - R$ [valor]
