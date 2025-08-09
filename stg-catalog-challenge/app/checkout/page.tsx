@@ -9,6 +9,7 @@ import { Label } from '@/components/ui/label'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import AuthGuard from '@/components/auth-guard'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowLeft, MapPin, MessageCircle, ShoppingBag } from 'lucide-react'
 import Header from '@/components/header'
 import { useRouter } from 'next/navigation'
@@ -150,12 +151,12 @@ Pedido via STG Catalog`
 
   if (isLoading) {
     return (
-      <main className="min-h-screen flex flex-col items-center">
+      <main className="min-h-screen bg-background flex flex-col items-center">
         <div className="flex-1 w-full flex flex-col items-center">
           <Header />
           <div className="max-w-6xl mx-auto p-6 w-full">
             <div className="flex items-center justify-center py-12">
-              <div className="text-lg">Carregando...</div>
+              <div className="text-lg text-foreground">Carregando...</div>
             </div>
           </div>
         </div>
@@ -190,25 +191,25 @@ Pedido via STG Catalog`
 
   return (
     <AuthGuard>
-      <main className="min-h-screen flex flex-col items-center bg-gray-50">
+      <main className="min-h-screen bg-background flex flex-col items-center">
         <div className="flex-1 w-full flex flex-col items-center">
           <Header />
           
           <div className="max-w-6xl mx-auto p-6 w-full">
             <div className="flex items-center gap-2 mb-8">
-              <Link href="/cart" className="text-gray-500 hover:text-gray-700">
+              <Link href="/cart" className="text-muted-foreground hover:text-foreground transition-colors">
                 <ArrowLeft className="w-5 h-5" />
               </Link>
-              <h1 className="text-3xl font-bold">Finalizar Pedido</h1>
+              <h1 className="text-3xl font-bold text-foreground">Finalizar Pedido</h1>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {/* Left Column - Forms */}
               <div className="lg:col-span-2 space-y-6">
                 {/* Shipping Information */}
-                <Card>
+                <Card className="bg-card border shadow-sm">
                   <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
+                    <CardTitle className="flex items-center gap-2 text-foreground">
                       <MapPin className="w-5 h-5" />
                       Informações de Entrega
                     </CardTitle>
@@ -307,19 +308,21 @@ Pedido via STG Catalog`
               {/* Right Column - Order Summary */}
               <div className="space-y-6">
                 {/* Cart Items */}
-                <Card>
+                <Card className="bg-card border shadow-sm">
                   <CardHeader>
-                    <CardTitle>Resumo do Pedido</CardTitle>
+                    <CardTitle className="text-foreground">Resumo do Pedido</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
                       {items.map(item => (
                         <div key={item.id} className="flex items-center gap-3 pb-3 border-b last:border-b-0">
                           {item.products.image_url && (
-                            <img
+                            <Image
                               src={item.products.image_url}
                               alt={item.products.name}
                               className="w-12 h-12 object-cover rounded"
+                              width={48}
+                              height={48}
                             />
                           )}
                           <div className="flex-1">
@@ -340,15 +343,15 @@ Pedido via STG Catalog`
                 </Card>
 
                 {/* Order Totals */}
-                <Card>
+                <Card className="bg-card border shadow-sm">
                   <CardHeader>
-                    <CardTitle>Detalhes do Pagamento</CardTitle>
+                    <CardTitle className="text-foreground">Detalhes do Pagamento</CardTitle>
                   </CardHeader>
                   <CardContent>
                                          <div className="space-y-3">
                        <div className="flex justify-between text-lg font-bold">
                          <span>Total ({items.length} {items.length === 1 ? 'item' : 'itens'})</span>
-                         <span className="text-green-600">
+                         <span className="text-green-600 dark:text-green-400">
                            R$ {total.toFixed(2)}
                          </span>
                        </div>
@@ -373,20 +376,20 @@ Pedido via STG Catalog`
                       )}
                     </Button>
                     
-                    <p className="text-xs text-gray-500 mt-3 text-center">
+                     <p className="text-xs text-muted-foreground mt-3 text-center">
                       Ao finalizar o pedido, você concorda com nossos termos e condições.
                     </p>
                   </CardContent>
                 </Card>
 
                 {/* Security Notice */}
-                <Card className="bg-green-50 border-green-200">
+                <Card className="bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-900/40">
                   <CardContent className="pt-6">
-                    <div className="flex items-center gap-2 text-green-700">
+                    <div className="flex items-center gap-2 text-green-700 dark:text-green-400">
                       <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                       <span className="text-sm font-medium">Compra 100% Segura</span>
                     </div>
-                    <p className="text-xs text-green-600 mt-1">
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-1">
                       Seus dados estão protegidos com criptografia SSL
                     </p>
                   </CardContent>

@@ -16,7 +16,7 @@ export default async function Home() {
         
         <div className="flex-1 flex flex-col gap-20 max-w-7xl p-5">
           <div className="flex flex-col items-center gap-4">
-            <h1 className="text-3xl font-bold">STG - Catálogo</h1>
+            <h1 className="text-3xl font-normal">STG - Catálogo</h1>
             <p className="text-lg text-muted-foreground">
               Explore nossa coleção de produtos e encontre o que você precisa.
             </p>

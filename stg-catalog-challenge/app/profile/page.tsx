@@ -9,26 +9,26 @@ export default function ProfilePage() {
   const session = useSession()
 
   const ProfileComponent = (
-    <div className="max-w-2xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-6">Meu Perfil</h1>
+    <div className="max-w-4xl mx-auto p-6">
+      <h1 className="text-3xl font-bold mb-6 text-foreground">Meu Perfil</h1>
       
-      <Card className="mb-6">
+      <Card className="mb-6 bg-card border shadow-sm">
         <CardHeader>
-          <CardTitle>Informações da Conta</CardTitle>
+          <CardTitle className="text-foreground">Informações da Conta</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
             <div>
-              <label className="text-sm font-medium text-gray-500">Email</label>
-              <p className="text-lg">{session?.user?.email}</p>
+              <label className="text-sm font-medium text-muted-foreground">Email</label>
+              <p className="text-lg text-foreground">{session?.user?.email}</p>
             </div>
             <div>
-              <label className="text-sm font-medium text-gray-500">ID do Usuário</label>
-              <p className="text-sm text-gray-600 font-mono">{session?.user?.id}</p>
+              <label className="text-sm font-medium text-muted-foreground">ID do Usuário</label>
+              <p className="text-sm text-muted-foreground font-mono">{session?.user?.id}</p>
             </div>
             <div>
-              <label className="text-sm font-medium text-gray-500">Data de Criação</label>
-              <p className="text-sm text-gray-600">
+              <label className="text-sm font-medium text-muted-foreground">Data de Criação</label>
+              <p className="text-sm text-muted-foreground">
                 {session?.user?.created_at ? new Date(session.user.created_at).toLocaleDateString('pt-BR') : 'N/A'}
               </p>
             </div>
@@ -36,12 +36,12 @@ export default function ProfilePage() {
         </CardContent>
       </Card>
 
-      <Card>
+      <Card className="bg-card border shadow-sm">
         <CardHeader>
-          <CardTitle>Ações</CardTitle>
+          <CardTitle className="text-foreground">Ações</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="space-y-3">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <Button variant="outline" className="w-full">
               Editar Perfil
             </Button>
