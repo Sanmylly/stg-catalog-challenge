@@ -107,7 +107,6 @@ CREATE TABLE cart_items (
   user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE,
   product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,
   quantity INTEGER NOT NULL DEFAULT 1,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 ```
 
