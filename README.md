@@ -46,7 +46,7 @@ O STG Catalog Challenge é uma aplicação de e-commerce moderna desenvolvida co
    - Estruturação de código e boas práticas
    - Debugging e otimização
 
-2. **Claude AI** - Assistência em desenvolvimento
+2. **Chat GPT** - Assistência em desenvolvimento
    - Revisão de código e arquitetura
    - Sugestões de melhorias
    - Documentação técnica
