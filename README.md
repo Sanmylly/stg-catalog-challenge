@@ -138,8 +138,8 @@ Acesse [http://localhost:3000](http://localhost:3000)
 
 ## 🔗 Links Funcionais
 
-- **Aplicação**: [https://stg-catalog-challenge.vercel.app](https://stg-catalog-challenge.vercel.app)
-- **Repositório**: [https://github.com/seu-usuario/stg-catalog-challenge](https://github.com/seu-usuario/stg-catalog-challenge)
+- **Aplicação**: [https://stg-catalog-challenge-brown.vercel.app](https://stg-catalog-challenge-brown.vercel.app)
+- **Repositório**: [https://github.com/seu-usuario/stg-catalog-challenge](https://github.com/Sanmylly/stg-catalog-challenge)
 - **Supabase**: [https://supabase.com](https://supabase.com)
 
 ## ✅ Checklist de Funcionalidades
